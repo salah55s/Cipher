@@ -14,8 +14,8 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent / 'src'))
 
-from ciphers.caesar_cipher_class import CaesarCipher
-from aes_modules.aes_low_level import AESLowLevel
+from src.ciphers.caesar_cipher_class import CaesarCipher
+from src.aes_modules.aes_low_level import AESLowLevel
 import time
 
 

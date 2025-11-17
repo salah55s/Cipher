@@ -14,7 +14,7 @@ def main():
         # Add src to path
         sys.path.insert(0, str(Path(__file__).parent / 'src'))
         
-        from gui.cipher_gui import main as gui_main
+        from src.gui.cipher_gui import main as gui_main
         print("🔐 Launching Cipher Encryption Tool...")
         gui_main()
     except ImportError as e:

@@ -10,14 +10,14 @@ sys.path.insert(0, str(Path(__file__).parent / 'src'))
 # Test imports
 print("Testing imports...")
 try:
-    from ciphers.caesar_cipher_class import CaesarCipher
+    from src.ciphers.caesar_cipher_class import CaesarCipher
     print("✓ Caesar cipher imported")
 except ImportError as e:
     print(f"✗ Caesar cipher import failed: {e}")
     sys.exit(1)
 
 try:
-    from aes_modules.aes_low_level import AESLowLevel
+    from src.aes_modules.aes_low_level import AESLowLevel
     print("✓ AES low-level imported")
 except ImportError as e:
     print(f"✗ AES import failed: {e}")
