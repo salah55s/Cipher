@@ -1,6 +1,6 @@
 """
 Low-Level AES Implementation - Galois Field Operations
-Authors: Salah, Fares, Ziad, Zeiad
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
 Description: Galois Field GF(2^8) arithmetic for AES MixColumns operation.
 """
 

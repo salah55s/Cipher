@@ -1,6 +1,6 @@
 # Cipher Encryption Tool 🔐
 
-**Authors:** Salah, Fares, Ziad, Zeiad
+**Authors:** [@salah55s](https://github.com/salah55s), [@Fares-Elsaghir](https://github.com/Fares-Elsaghir), [@ZiadMahmoud855](https://github.com/ZiadMahmoud855), [@zeiad1655](https://github.com/zeiad1655), [@omar97531](https://github.com/omar97531)
 
 A comprehensive Python encryption tool featuring both classical Caesar cipher and modern AES-256 encryption with an interactive GUI and visual step-by-step process display.
 

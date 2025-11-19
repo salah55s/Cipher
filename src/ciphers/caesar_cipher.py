@@ -1,6 +1,6 @@
 """
 Caesar Cipher Implementation
-Authors: Salah, Fares, Ziad, Zeiad
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
 Description: A command-line tool for encrypting and decrypting text using the Caesar cipher algorithm.
 """
 

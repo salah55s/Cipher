@@ -229,7 +229,11 @@ class MyCipher(CipherBase):
 
 ## 👥 Authors
 
-Salah, Fares, Ziad, Zeiad
+- [@salah55s](https://github.com/salah55s) - Salah Eldin
+- [@Fares-Elsaghir](https://github.com/Fares-Elsaghir) - Fares
+- [@ZiadMahmoud855](https://github.com/ZiadMahmoud855) - Ziad Mahmoud Ahmed
+- [@zeiad1655](https://github.com/zeiad1655) - Zeiad
+- [@omar97531](https://github.com/omar97531) - Omar
 
 ---
 

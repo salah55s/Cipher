@@ -1,6 +1,6 @@
 """
 Cipher GUI Application
-Authors: Salah, Fares, Ziad, Zeiad
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
 Description: Interactive GUI for Caesar and AES cipher with visual step display.
 """
 

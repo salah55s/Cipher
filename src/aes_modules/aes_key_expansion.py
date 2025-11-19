@@ -1,6 +1,6 @@
 """
 Low-Level AES Implementation - Key Expansion
-Authors: Salah, Fares, Ziad, Zeiad
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
 Description: AES key schedule and round key generation.
 """
 

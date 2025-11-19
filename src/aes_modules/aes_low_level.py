@@ -1,6 +1,6 @@
 """
 Low-Level AES Implementation - Main Cipher
-Authors: Salah, Fares, Ziad, Zeiad
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
 Description: Complete AES-128/256 encryption/decryption with detailed step tracking.
 """
 
