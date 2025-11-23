@@ -234,6 +234,7 @@ class MyCipher(CipherBase):
 - [@ZiadMahmoud855](https://github.com/ZiadMahmoud855) - Ziad Mahmoud Ahmed
 - [@zeiad1655](https://github.com/zeiad1655) - Zeiad
 - [@omar97531](https://github.com/omar97531) - Omar
+- [@KhaledGamal1](https://github.com/KhaledGamal1) - Khaled Gamal
 
 ---
 
