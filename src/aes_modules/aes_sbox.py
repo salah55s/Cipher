@@ -1,10 +1,35 @@
 """
 Low-Level AES Implementation - S-Box Module
-Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531, @KhaledGamal1
 Description: AES S-Box and inverse S-Box lookup tables and operations.
+
+================================================================================
+WHAT IS THE S-BOX?
+================================================================================
+The S-Box (Substitution Box) is a 256-byte lookup table used in the SubBytes
+transformation of AES. It provides the ONLY non-linear operation in AES,
+which is crucial for security against linear and differential cryptanalysis.
+
+HOW IT WORKS:
+  1. Each byte in the state (0x00 to 0xFF) is used as an index into the S-Box
+  2. The byte at that index becomes the substituted value
+  3. Example: byte 0x53 → SBOX[0x53] = 0xED
+
+HOW IT'S GENERATED (for reference):
+  1. Take the multiplicative inverse in GF(2^8), with 0x00 mapped to itself
+  2. Apply an affine transformation over GF(2)
+
+The inverse S-Box reverses this operation during decryption.
+================================================================================
 """
 
-# AES S-Box - Substitution box for SubBytes transformation
+# ============================================================================
+# AES S-BOX LOOKUP TABLE
+# ============================================================================
+# Each row contains 16 bytes. To find SBOX[xy] where x,y are hex digits:
+#   - x selects the row (0-F)
+#   - y selects the column (0-F)
+# Example: SBOX[0x53] → row 5, column 3 → 0xED
 SBOX = [
     0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
     0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72, 0xC0,
@@ -24,7 +49,12 @@ SBOX = [
     0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16
 ]
 
-# Inverse S-Box for decryption
+# ============================================================================
+# INVERSE S-BOX LOOKUP TABLE (for decryption)
+# ============================================================================
+# The inverse S-Box reverses the SubBytes transformation.
+# For any byte b: INV_SBOX[SBOX[b]] = b
+# This is used in the InvSubBytes step during AES decryption.
 INV_SBOX = [
     0x52, 0x09, 0x6A, 0xD5, 0x30, 0x36, 0xA5, 0x38, 0xBF, 0x40, 0xA3, 0x9E, 0x81, 0xF3, 0xD7, 0xFB,
     0x7C, 0xE3, 0x39, 0x82, 0x9B, 0x2F, 0xFF, 0x87, 0x34, 0x8E, 0x43, 0x44, 0xC4, 0xDE, 0xE9, 0xCB,

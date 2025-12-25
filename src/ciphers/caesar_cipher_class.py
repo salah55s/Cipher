@@ -1,6 +1,6 @@
 """
 Caesar Cipher Class Implementation
-Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531, @KhaledGamal1
 Description: Object-oriented implementation of Caesar cipher with step visualization.
 """
 

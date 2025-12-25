@@ -1,6 +1,6 @@
 """
 Demo Script - Cipher Tool Examples
-Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531, @KhaledGamal1
 Description: Demonstrates the capabilities of both Caesar and AES ciphers.
 """
 
@@ -172,7 +172,7 @@ def main():
     """Run all demonstrations."""
     print("\n" + "=" * 60)
     print("  🔐 CIPHER TOOL DEMONSTRATION")
-    print("  Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531")
+    print("  Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531, @KhaledGamal1")
     print("=" * 60)
     
     time.sleep(1)

@@ -41,6 +41,7 @@ Caesar/
 ## 🎯 Module Overview
 
 ### `src/ciphers/`
+
 **Cipher Implementations**
 
 - `cipher_base.py` - Abstract base class defining the cipher interface
@@ -48,6 +49,7 @@ Caesar/
 - `aes_cipher_class.py` - High-level AES using pycryptodome library
 
 ### `src/aes_modules/`
+
 **Low-Level AES Components** (Built from scratch for education)
 
 - `aes_sbox.py` - S-Box and inverse S-Box lookup tables
@@ -57,17 +59,20 @@ Caesar/
 - `aes_low_level.py` - Complete AES-128/256 cipher with visualization
 
 ### `src/gui/`
+
 **Graphical User Interfaces**
 
 - `cipher_gui.py` - Tkinter-based desktop application
 
 ### `tests/`
+
 **Testing and Demos**
 
 - `test_ciphers.py` - Automated tests for all ciphers
 - `demo.py` - Interactive demonstration script
 
 ### `docs/`
+
 **Documentation**
 
 - `README.md` - Complete project documentation
@@ -78,10 +83,13 @@ Caesar/
 ## 🚀 Running the Application
 
 ### 1. Web UI (Streamlit) - Recommended
+
 ```bash
 streamlit run streamlit_app.py
 ```
+
 **Features:**
+
 - Modern web interface
 - Rich visualizations with Plotly
 - Step-by-step expandable sections
@@ -89,25 +97,31 @@ streamlit run streamlit_app.py
 - Round-by-round analysis
 
 ### 2. Desktop GUI (Tkinter)
+
 ```bash
 python run_gui.py
 ```
+
 or
+
 ```bash
 python src/gui/cipher_gui.py
 ```
 
 ### 3. Command Line (Caesar only)
+
 ```bash
 python caesar_cipher.py -m "Hello" -s 3 -e
 ```
 
 ### 4. Demo Script
+
 ```bash
 python tests/demo.py
 ```
 
 ### 5. Run Tests
+
 ```bash
 python tests/test_ciphers.py
 ```
@@ -144,6 +158,7 @@ CipherBase (Abstract)
 ```
 
 ### Benefits
+
 - ✅ **Separation of Concerns** - Each module has one responsibility
 - ✅ **Reusability** - Components can be used independently
 - ✅ **Testability** - Easy to test individual modules
@@ -163,6 +178,7 @@ CipherBase (Abstract)
 5. Add to GUI/Streamlit choices
 
 Example:
+
 ```python
 from src.ciphers.cipher_base import CipherBase
 
@@ -195,6 +211,7 @@ class MyCipher(CipherBase):
 ## 📚 Key Features by Module
 
 ### Streamlit App (`streamlit_app.py`)
+
 - ✨ Modern web interface
 - 📊 Interactive Plotly charts
 - 🔍 Expandable step sections
@@ -202,6 +219,7 @@ class MyCipher(CipherBase):
 - 📱 Responsive design
 
 ### Low-Level AES (`src/aes_modules/`)
+
 - 🔐 Built from scratch
 - 📖 Educational implementation
 - 🔬 Every operation visible
@@ -209,6 +227,7 @@ class MyCipher(CipherBase):
 - 🧪 Modular components
 
 ### Tkinter GUI (`src/gui/cipher_gui.py`)
+
 - 🖥️ Desktop application
 - 📋 Clipboard integration
 - 📊 Scrollable step display
@@ -234,6 +253,7 @@ class MyCipher(CipherBase):
 - [@ZiadMahmoud855](https://github.com/ZiadMahmoud855) - Ziad Mahmoud Ahmed
 - [@zeiad1655](https://github.com/zeiad1655) - Zeiad
 - [@omar97531](https://github.com/omar97531) - Omar
+- [@KhaledGamal1](https://github.com/KhaledGamal1) - Khaled Gamal
 - [@KhaledGamal1](https://github.com/KhaledGamal1) - Khaled Gamal
 
 ---

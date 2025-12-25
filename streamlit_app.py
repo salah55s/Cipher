@@ -1,6 +1,6 @@
 """
 Streamlit Cipher Visualization App
-Authors: [@salah55s](https://github.com/salah55s), [@Fares-Elsaghir](https://github.com/Fares-Elsaghir), [@ZiadMahmoud855](https://github.com/ZiadMahmoud855), [@zeiad1655](https://github.com/zeiad1655), [@omar97531](https://github.com/omar97531)
+Authors: [@salah55s](https://github.com/salah55s), [@Fares-Elsaghir](https://github.com/Fares-Elsaghir), [@ZiadMahmoud855](https://github.com/ZiadMahmoud855), [@zeiad1655](https://github.com/zeiad1655), [@omar97531, @KhaledGamal1](https://github.com/omar97531)
 Description: Interactive web UI for cipher encryption with rich visualizations.
 """
 
@@ -266,7 +266,7 @@ def main():
         # Authors
         st.markdown("---")
         st.caption("👥 **Authors:**")
-        st.markdown("[@salah55s](https://github.com/salah55s) • [@Fares-Elsaghir](https://github.com/Fares-Elsaghir) • [@ZiadMahmoud855](https://github.com/ZiadMahmoud855) • [@zeiad1655](https://github.com/zeiad1655) • [@omar97531](https://github.com/omar97531)")
+        st.markdown("[@salah55s](https://github.com/salah55s) • [@Fares-Elsaghir](https://github.com/Fares-Elsaghir) • [@ZiadMahmoud855](https://github.com/ZiadMahmoud855) • [@zeiad1655](https://github.com/zeiad1655) • [@omar97531](https://github.com/omar97531) • [@KhaledGamal1](https://github.com/KhaledGamal1)")
     
     # Main content
     col1, col2 = st.columns([1, 1])

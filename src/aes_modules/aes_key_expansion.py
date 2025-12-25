@@ -1,13 +1,45 @@
 """
 Low-Level AES Implementation - Key Expansion
-Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531
+Authors: @salah55s, @Fares-Elsaghir, @ZiadMahmoud855, @zeiad1655, @omar97531, @KhaledGamal1
 Description: AES key schedule and round key generation.
+
+================================================================================
+KEY EXPANSION (RIJNDAEL KEY SCHEDULE)
+================================================================================
+The original AES key (128/192/256 bits) is expanded into multiple "round keys",
+one for each round of encryption plus one initial key.
+
+KEY SIZES AND ROUNDS:
+  - AES-128: 16-byte key → 176 bytes (11 round keys × 16 bytes)
+  - AES-192: 24-byte key → 208 bytes (13 round keys × 16 bytes)
+  - AES-256: 32-byte key → 240 bytes (15 round keys × 16 bytes)
+
+TERMINOLOGY:
+  - Nk: Number of 32-bit words in the original key (4, 6, or 8)
+  - Nr: Number of rounds (10, 12, or 14)
+  - Word: A 32-bit (4-byte) unit
+
+THE ALGORITHM:
+  1. The first Nk words are just the original key
+  2. For each subsequent word i:
+     - If i % Nk == 0: Apply RotWord, SubWord, XOR with Rcon
+     - Else if Nk > 6 and i % Nk == 4: Apply SubWord only (AES-256)
+     - Then XOR with word[i - Nk]
+
+This ensures each round key is different and non-linearly derived from
+the original key.
+================================================================================
 """
 
 from .aes_sbox import SBOX
 
 
-# Round constants for key expansion
+# ============================================================================
+# ROUND CONSTANTS (RCON)
+# ============================================================================
+# Used in key expansion to make each round key unique.
+# RCON[i] = 2^(i-1) in GF(2^8), used to XOR with the first byte after RotWord.
+# These are the first 30 values (more than enough for AES-256).
 RCON = [
     0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1B, 0x36,
     0x6C, 0xD8, 0xAB, 0x4D, 0x9A, 0x2F, 0x5E, 0xBC, 0x63, 0xC6,
@@ -15,44 +47,61 @@ RCON = [
 ]
 
 
+# ============================================================================
+# KEY EXPANSION HELPER FUNCTIONS
+# ============================================================================
+
 def rot_word(word):
     """
-    Rotate word: [a0, a1, a2, a3] -> [a1, a2, a3, a0]
+    Rotate word left by one byte: [a0, a1, a2, a3] → [a1, a2, a3, a0]
+    
+    This is used in key expansion to provide diffusion.
     
     Args:
         word: List of 4 bytes
         
     Returns:
-        Rotated word
+        Rotated word (new list)
     """
+    # Take bytes 1,2,3 and append byte 0 at the end
     return word[1:] + word[:1]
 
 
 def sub_word(word):
     """
-    Apply S-Box to each byte in word.
+    Apply S-Box substitution to each byte in a word.
+    
+    This provides non-linearity in the key schedule, preventing
+    related-key attacks.
     
     Args:
         word: List of 4 bytes
         
     Returns:
-        Substituted word
+        Substituted word (new list)
     """
+    # Each byte is replaced with its S-Box lookup
     return [SBOX[byte] for byte in word]
 
 
 def xor_words(word1, word2):
     """
-    XOR two words.
+    XOR two 4-byte words together (byte-by-byte).
     
     Args:
         word1: First word (list of 4 bytes)
         word2: Second word (list of 4 bytes)
         
     Returns:
-        XOR result
+        XOR result (new list of 4 bytes)
     """
     return [word1[i] ^ word2[i] for i in range(4)]
+
+
+# ============================================================================
+# MAIN KEY EXPANSION FUNCTION
+# ============================================================================
+
 
 
 def key_expansion(key, key_size=16):
